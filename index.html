@@ -1,145 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="PVSvdzGmdObukz2oXGTnwEVapWrC_IgAHcTbfEaFu80" />
-<title>Chenji Fu's Webpage</title>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async
-          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="PVSvdzGmdObukz2oXGTnwEVapWrC_IgAHcTbfEaFu80">
+  <meta name="description" content="Chenji Fu, PhD student at the University of Bonn. Research interests: algebraic geometry, number theory and representation theory.">
+  <title>Chenji Fu's Webpage</title>
 
-.homepage-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 32px;
-  padding: 88px 32px 48px;
-}
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-.homepage-photo {
-  display: block;
-  width: 150px;
-  max-width: 100%;
-  height: auto;
-  flex-shrink: 0;
-}
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #ffffff;
+      --text: #232b33;
+      --secondary: #61707d;
+      --border: #dfe4e8;
+      --link: #315e79;
+      --photo-width: 150px;
+    }
 
-.homepage-heading {
-  flex: 1;
-  min-width: 0;
-  text-align: center;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.homepage-heading h2 {
-  margin: 0;
-  font-size: clamp(32px, 5vw, 64px);
-}
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
 
-@media (max-width: 600px) {
-  .homepage-header {
-    flex-direction: column;
-    gap: 24px;
-    padding: 80px 20px 40px;
-  }
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
 
-  .homepage-heading {
-    text-align: left;
-  }
-}
-          
-</style>
+    a:hover {
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 5px;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      min-height: 78px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-name {
+      color: var(--text);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      font-size: 14px;
+    }
+
+    .site-nav a {
+      display: inline-block;
+      padding: 12px 0;
+      color: var(--secondary);
+    }
+
+    .site-nav a[aria-current="page"] {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 9px;
+    }
+
+    .profile {
+      display: grid;
+      grid-template-columns: var(--photo-width) minmax(0, 1fr);
+      align-items: start;
+      gap: 52px;
+      padding: 56px 0 50px;
+    }
+
+    .profile-photo {
+      display: block;
+      width: var(--photo-width);
+      max-width: 100%;
+      height: auto;
+      border-radius: 3px;
+    }
+
+    .profile-affiliation {
+      margin: 18px 0 0;
+      color: var(--secondary);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .profile-content {
+      min-width: 0;
+    }
+
+    h1 {
+      margin: -8px 0 6px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 46px;
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+    }
+
+    p {
+      margin: 0 0 20px;
+    }
+
+    .email {
+      margin-bottom: 25px;
+      color: var(--link);
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    h2 {
+      margin: 29px 0 10px;
+      color: var(--secondary);
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .research-detail {
+      margin-bottom: 0;
+      color: var(--secondary);
+    }
+
+    .site-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 19px 0 23px;
+      border-top: 1px solid var(--border);
+      color: var(--secondary);
+      font-size: 13px;
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        padding: 0 24px;
+      }
+
+      .site-header {
+        padding: 16px 0;
+      }
+
+      .site-nav {
+        gap: 22px;
+      }
+
+      .profile {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding: 32px 0;
+      }
+
+      .profile-affiliation {
+        display: none;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="page">
+    <header class="site-header">
+      <a class="site-name" href="https://chenji-fu.github.io/">Chenji Fu</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="https://chenji-fu.github.io/" aria-current="page">Home</a>
+        <a href="https://chenji-fu.github.io/research">Research</a>
+        <a href="https://chenji-fu.github.io/contact">Contact</a>
+      </nav>
+    </header>
 
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-grey w3-card w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-grey" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="https://chenji-fu.github.io" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white">Home</a>
-    <a href="https://chenji-fu.github.io/research" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Research</a>
-    <a href="https://chenji-fu.github.io/contact" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
-    <!-- <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 3</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 4</a> -->
+    <main class="profile">
+      <aside aria-label="Profile photograph and affiliation">
+        <!-- To change the photo, replace the src URL below. -->
+        <img
+          class="profile-photo"
+          src="https://raw.githubusercontent.com/Chenji-Fu/Chenji-Fu.github.io/main/Homepage_photo_2026.jpg"
+          alt="Chenji Fu"
+          width="1087"
+          height="1447"
+        >
+        <p class="profile-affiliation">
+          PhD student<br>
+          University of Bonn
+        </p>
+      </aside>
+
+      <div class="profile-content">
+        <h1>Chenji Fu</h1>
+        <p class="email">cfu at math.uni-bonn.de</p>
+
+        <p>
+          I am a PhD student at the University of Bonn under the supervision
+          of Jessica Fintzen and Peter Scholze.
+        </p>
+
+        <section aria-labelledby="research-heading">
+          <h2 id="research-heading">Research interests</h2>
+          <p>
+            I'm interested in algebraic geometry, number theory and
+            representation theory.
+          </p>
+          <p class="research-detail">
+            More precisely, I'm interested in the Langlands program,
+            representations of finite reductive groups and p-adic groups,
+            and the shtuka spaces.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span>University of Bonn</span>
+      <a href="https://chenji-fu.github.io/research">Research &rarr;</a>
+    </footer>
   </div>
-
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="https://chenji-fu.github.io" class="w3-bar-item w3-button w3-padding-large">Home</a>
-    <a href="https://chenji-fu.github.io/research" class="w3-bar-item w3-button w3-padding-large">Research</a>
-    <a href="https://chenji-fu.github.io/contact" class="w3-bar-item w3-button w3-padding-large">Contact</a>
-    <!-- <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a> -->
-  </div>
-</div>
-
-<!-- Header -->
-<header class="w3-container w3-grey homepage-header">  
-  <img
-    class="homepage-photo"
-    src="https://raw.githubusercontent.com/Chenji-Fu/Chenji-Fu.github.io/main/Homepage_photo_2026.jpg"
-    alt="Chenji Fu"
-  >
-
-  <div class="homepage-heading">
-    <h2>Chenji Fu</h2>
-    <p class="w3-xlarge">cfu at math.uni-bonn.de</p>
-  </div>
-</header>
-
-<!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-twothird">
-     I am a phd student at the University of Bonn under the supervision of Jessica Fintzen and Peter Scholze. I'm interested in  algebraic geometry, number theory and representation theory. More precisely, I'm interested in the Langlands program, representations of finite reductive groups and p-adic groups, and the shtuka spaces.
-
-    </div>
-  </div>
-</div>
-          
-
-
-<!-- Second Grid -->
-<!--
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-third w3-center">
-      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
-    </div>
-
-    <div class="w3-twothird">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
-
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-  </div>
-</div>
--->
-
-<script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
-
 </body>
 </html>
-
-
-
