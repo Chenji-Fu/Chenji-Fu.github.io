@@ -24,6 +24,14 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+    section[id] {
+      scroll-margin-top: 110px;
+    }
+
     body {
       margin: 0;
       background: var(--background);
@@ -55,6 +63,9 @@
     }
 
     .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -62,6 +73,7 @@
       gap: 12px 24px;
       min-height: 78px;
       border-bottom: 1px solid var(--border);
+      background: var(--background);
     }
 
     .site-name {
@@ -84,7 +96,7 @@
       color: var(--secondary);
     }
 
-    .site-nav a[aria-current="page"] {
+    .site-nav a:hover {
       color: var(--text);
       text-decoration: underline;
       text-underline-offset: 9px;
@@ -137,7 +149,7 @@
       overflow-wrap: anywhere;
     }
 
-    h2 {
+    .eyebrow {
       margin: 29px 0 10px;
       color: var(--secondary);
       font-size: 12px;
@@ -150,6 +162,77 @@
     .research-detail {
       margin-bottom: 0;
       color: var(--secondary);
+    }
+
+    .content-section {
+      display: grid;
+      grid-template-columns: var(--photo-width) minmax(0, 1fr);
+      align-items: start;
+      gap: 52px;
+      padding: 42px 0 44px;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-title {
+      margin: -3px 0 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    .section-body {
+      min-width: 0;
+    }
+
+    .section-body > .eyebrow,
+    .contact-grid .eyebrow {
+      margin: 0 0 16px;
+    }
+
+    .paper-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .paper + .paper {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .paper-title {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    .paper-link {
+      display: inline-block;
+      padding: 6px 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+      gap: 32px;
+    }
+
+    .contact-email {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-address {
+      margin: 0;
+      font-style: normal;
     }
 
     .site-footer {
@@ -186,8 +269,49 @@
         display: none;
       }
 
+      section[id] {
+        scroll-margin-top: 150px;
+      }
+
+      .content-section {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        padding: 32px 0;
+      }
+
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+      }
+
+      .paper-title {
+        font-size: 21px;
+      }
+
       h1 {
         font-size: 38px;
+      }
+    }
+
+    @media (min-width: 621px) and (max-width: 800px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+      }
+    }
+
+    @media (pointer: coarse) {
+      .paper-link,
+      .contact-email a {
+        display: inline-block;
+        min-height: 44px;
+        padding: 11px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
       }
     }
   </style>
@@ -195,57 +319,115 @@
 <body>
   <div class="page">
     <header class="site-header">
-      <a class="site-name" href="https://chenji-fu.github.io/">Chenji Fu</a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="https://chenji-fu.github.io/" aria-current="page">Home</a>
-        <a href="https://chenji-fu.github.io/research">Research</a>
-        <a href="https://chenji-fu.github.io/contact">Contact</a>
+      <a class="site-name" href="#home">Chenji Fu</a>
+      <nav class="site-nav" aria-label="Page sections">
+        <a href="#home">Home</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <main class="profile">
-      <aside aria-label="Profile photograph and affiliation">
-        <!-- To change the photo, replace the src URL below. -->
-        <img
-          class="profile-photo"
-          src="https://raw.githubusercontent.com/Chenji-Fu/Chenji-Fu.github.io/main/Homepage_photo_2026.jpg"
-          alt="Chenji Fu"
-          width="1087"
-          height="1447"
-        >
-        <p class="profile-affiliation">
-          PhD student<br>
-          University of Bonn
-        </p>
-      </aside>
+    <main>
+      <section class="profile" id="home" aria-labelledby="name-heading">
+        <aside aria-label="Profile photograph and affiliation">
+          <!-- To change the photo, replace the src URL below. -->
+          <img
+            class="profile-photo"
+            src="https://raw.githubusercontent.com/Chenji-Fu/Chenji-Fu.github.io/main/Homepage_photo_2026.jpg"
+            alt="Chenji Fu"
+            width="1087"
+            height="1447"
+          >
+          <p class="profile-affiliation">
+            PhD student<br>
+            University of Bonn
+          </p>
+        </aside>
 
-      <div class="profile-content">
-        <h1>Chenji Fu</h1>
-        <p class="email">cfu at math.uni-bonn.de</p>
+        <div class="profile-content">
+          <h1 id="name-heading">Chenji Fu</h1>
+          <p class="email">cfu at math.uni-bonn.de</p>
 
-        <p>
-          I am a PhD student at the University of Bonn under the supervision
-          of Jessica Fintzen and Peter Scholze.
-        </p>
-
-        <section aria-labelledby="research-heading">
-          <h2 id="research-heading">Research interests</h2>
           <p>
-            I'm interested in algebraic geometry, number theory and
-            representation theory.
+            I am a PhD student at the University of Bonn under the supervision
+            of Jessica Fintzen and Peter Scholze.
           </p>
-          <p class="research-detail">
-            More precisely, I'm interested in the Langlands program,
-            representations of finite reductive groups and p-adic groups,
-            and the shtuka spaces.
-          </p>
-        </section>
-      </div>
+
+          <section aria-labelledby="interests-heading">
+            <h2 class="eyebrow" id="interests-heading">Research interests</h2>
+            <p>
+              I'm interested in algebraic geometry, number theory and
+              representation theory.
+            </p>
+            <p class="research-detail">
+              More precisely, I'm interested in the Langlands program,
+              representations of finite reductive groups and p-adic groups,
+              and the shtuka spaces.
+            </p>
+          </section>
+        </div>
+      </section>
+
+      <section class="content-section" id="research" aria-labelledby="research-heading">
+        <h2 class="section-title" id="research-heading">Research</h2>
+
+        <div class="section-body">
+          <h3 class="eyebrow">Preprints</h3>
+          <!-- Add future preprints as additional li elements inside this list. -->
+          <ul class="paper-list" role="list">
+            <li class="paper">
+              <article aria-labelledby="paper-stability">
+                <h4 class="paper-title" id="paper-stability">
+                  Stability of elliptic Fargues-Scholze L-packets
+                </h4>
+                <a class="paper-link" href="https://arxiv.org/abs/2501.00652">
+                  arXiv: 2501.00652 <span aria-hidden="true">&rarr;</span>
+                </a>
+              </article>
+            </li>
+
+            <li class="paper">
+              <article aria-labelledby="paper-langlands">
+                <h4 class="paper-title" id="paper-langlands">
+                  On the categorical local Langlands conjectures for depth-zero
+                  regular supercuspidal representations
+                </h4>
+                <a class="paper-link" href="https://arxiv.org/abs/2504.13869">
+                  arXiv: 2504.13869 <span aria-hidden="true">&rarr;</span>
+                </a>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="content-section" id="contact" aria-labelledby="contact-heading">
+        <h2 class="section-title" id="contact-heading">Contact</h2>
+
+        <div class="section-body contact-grid">
+          <div>
+            <h3 class="eyebrow">Email</h3>
+            <p class="contact-email">
+              <a href="mailto:cfu@math.uni-bonn.de">cfu at math.uni-bonn.de</a>
+            </p>
+          </div>
+
+          <div>
+            <h3 class="eyebrow">Postal address</h3>
+            <address class="contact-address">
+              Max Planck Institute for Mathematics<br>
+              Vivatsgasse 7<br>
+              53111 Bonn<br>
+              Germany
+            </address>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
       <span>University of Bonn</span>
-      <a href="https://chenji-fu.github.io/research">Research &rarr;</a>
+      <a href="#home">Back to top &uarr;</a>
     </footer>
   </div>
 </body>
