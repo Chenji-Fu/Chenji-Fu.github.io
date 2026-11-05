@@ -226,6 +226,14 @@
       line-height: 1.6;
     }
 
+    .video-note {
+      flex-basis: 100%;
+      margin: 4px 0 0;
+      color: var(--secondary);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
     .contact-grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
@@ -397,9 +405,18 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Video explanation of Depth-zero local Langlands via shtukas in mixed characteristic (opens in a new tab)"
+                    aria-describedby="video-remark"
                   >
                     Video explanation <span aria-hidden="true">&nearr;</span>
                   </a>
+                  <p class="video-note" id="video-remark">
+                    There is a typo in the video at around 36:00:
+                    "The \((I_E/P_E)^J\)-action on \(H_V\)" should be
+                    "The \((I_E/P_E)^J\)-action on \(e_{\chi}H_V\)",
+                    namely, we apply the idempotent \(e_{\chi}\) in the group
+                    algebra of the finite group \(G(k_E)\) to the cohomology
+                    of shtuka \(H_V\).
+                  </p>
                 </div>
               </article>
             </li>
